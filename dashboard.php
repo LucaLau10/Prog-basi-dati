@@ -1,14 +1,13 @@
 <?php
 session_start();
-if (!isset($_SESSION['user_id'])) {
-    header('Location: index.html');
+require 'config.php';
+
+if (!isset($_SESSION['id_cliente'])) {
+    header('Location: index.php');
     exit();
 }
 
-
-$pdo = new PDO("mysql:host=localhost;dbname=banca", "root", "sofia");
-
-$stmt = $pdo->query("SELECT * FROM ContoCorrente WHERE id_cliente= " . $_SESSION['user_id']);
+$stmt = $pdo->query("SELECT * FROM ContoCorrente WHERE id_cliente= " . $_SESSION['id_cliente']);
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if (!$row) {
