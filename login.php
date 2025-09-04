@@ -12,9 +12,19 @@ $user = $stmt->fetch();
 
 if ( $password == $user['password']) {
     $_SESSION['username']  = $user['username'];
-    $_SESSION['id_utente'] = $user['id'];
     $_SESSION['id_cliente']   = $user['id_cliente'];
     header("Location: dashboard.php");
+    exit;
+}
+
+$stmt = $pdo->prepare("SELECT * FROM dipendente WHERE cognome=?");
+$stmt->execute([$username]);
+$admin = $stmt->fetch();
+
+if ( $password == $admin['password']) {
+    $_SESSION['username']  = $admin['cognome'];
+    $_SESSION['id_dipendente']   = $admin['id_dipendente'];
+    header("Location: dashboard_admin.php");
     exit;
 }
 
