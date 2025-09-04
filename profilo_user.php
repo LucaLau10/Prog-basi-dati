@@ -1,11 +1,11 @@
 <?php
 session_start();
+require 'config.php';
+
 if (!isset($_SESSION['user_id'])) {
     header('Location: index.php');
     exit();
 }
-
-$pdo = new PDO("mysql:host=localhost;dbname=banca", "root", "sofia");
 
 // Recupero dati utente
 $stmt = $pdo->prepare("SELECT * FROM Cliente WHERE id_cliente = ?");
@@ -72,4 +72,5 @@ $conti = $stmt->fetchAll(PDO::FETCH_ASSOC);
   </div>
 </body>
 </html>
+
 
