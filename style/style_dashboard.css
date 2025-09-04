@@ -1,0 +1,273 @@
+/* Stile generale */
+body {
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: #e0e0e0;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header con bottone e titolo */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  position: relative;
+  padding: 0 20px;
+}
+
+/* Bottone in alto a sinistra */
+.dropdown {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.dropdown button {
+  padding: 10px 16px;
+  background-color: #2ecc71;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown button:hover {
+  background-color: #27ae60;
+}
+
+/* Menu a discesa */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: #ffffff;
+  min-width: 160px;
+  box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 6px;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #2c3e50;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #ecf0f1;
+  border-radius: 6px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Titolo centrato */
+.header h1 {
+  margin: 0;
+  font-size: 30px;
+  color: #f1f1f1;
+  text-align: center;
+  font-weight: 700;
+}
+
+/* Contenuto principale */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 40px 20px;
+  text-align: center;
+  max-height: 200px;
+}
+
+.main-content h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.main-content p {
+  font-size: 20px;
+  background-color: rgba(255,255,255,0.1);
+  padding: 12px 24px;
+  border-radius: 8px;
+  color: #f8f8f8;
+  font-weight: 500;
+}
+
+
+/* Stile per schermata senza conto */
+body.no-account {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.no-account h1 {
+  font-size: 26px;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.open-account-btn {
+  padding: 16px 32px;
+  font-size: 20px;
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.open-account-btn:hover {
+  background-color: #27ae60;
+}
+
+.bonifici-storico {
+  margin-top: 40px;
+  margin-bottom: 60px; 
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  width: 90%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.bonifici-storico h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #f1f1f1;
+  font-weight: 600;
+}
+
+.bonifici-storico table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #fff;
+  font-size: 16px;
+}
+
+.bonifici-storico thead tr th:first-child {
+  border-top-left-radius: 8px;
+}
+
+.bonifici-storico thead tr th:last-child {
+  border-top-right-radius: 8px;
+}
+
+.bonifici-storico th,
+.bonifici-storico td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #444;
+  text-align: center;
+}
+
+.bonifici-storico th {
+  background-color: #34495e;
+  font-weight: 700;
+  color: #ecf0f1;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.bonifici-storico tr:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  transition: background-color 0.2s ease;
+}
+
+.bonifici-storico td {
+  background-color: transparent;
+}
+
+.form-container {
+  margin: 60px auto;
+  padding: 30px 40px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #f1f1f1;
+}
+
+.form-container p {
+  font-size: 18px;
+  line-height: 1.5;
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 10px 16px;
+  border-radius: 8px;
+  color: #e0e0e0;
+  font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .bonifici-storico table,
+  .bonifici-storico thead,
+  .bonifici-storico tbody,
+  .bonifici-storico th,
+  .bonifici-storico td,
+  .bonifici-storico tr {
+    display: block;
+    width: 100%;
+  }
+
+  .bonifici-storico tr {
+    margin-bottom: 15px;
+    border-bottom: 2px solid #444;
+  }
+
+  .bonifici-storico td {
+    text-align: left;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  .bonifici-storico td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 16px;
+    font-weight: bold;
+    color: #ccc;
+  }
+
+  .bonifici-storico th {
+    display: none;
+  }
+}
