@@ -334,3 +334,114 @@ body.no-account {
     width: 100%;
   }
 }
+
+/* ===== Aggiunte per modifica_conti.php ===== */
+
+/* Card per ogni conto */
+.form-container {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 24px 32px;
+  margin-bottom: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 600px;
+}
+
+/* Titolo del blocco conto */
+.form-container h2 {
+  margin-top: 0;
+  font-size: 22px;
+  color: #f1f1f1;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+/* Label e input testo */
+.form-container label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #e0e0e0;
+}
+
+.form-container input[type="text"] {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 15px;
+  border: 1px solid #555;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  margin-top: 4px;
+}
+
+/* Pulsanti azione */
+.form-container button {
+  padding: 8px 16px;
+  margin: 8px 8px 0 0;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  color: #fff;
+}
+
+/* Cambia nome */
+.form-container button[value="update_name"] {
+  background-color: #3498db;
+}
+.form-container button[value="update_name"]:hover {
+  background-color: #2980b9;
+}
+
+/* Chiudi conto */
+.form-container button[value="close"] {
+  background-color: #e74c3c;
+}
+.form-container button[value="close"]:hover {
+  background-color: #c0392b;
+}
+
+/* Blocca conto */
+.form-container button[value="block"] {
+  background-color: #f1c40f;
+  color: #2c3e50;
+}
+.form-container button[value="block"]:hover {
+  background-color: #d4ac0d;
+}
+
+/* Riapri/Sblocca conto */
+.form-container button[value="reopen"],
+.form-container button[value="unblock"] {
+  background-color: #2ecc71;
+}
+.form-container button[value="reopen"]:hover,
+.form-container button[value="unblock"]:hover {
+  background-color: #27ae60;
+}
+
+/* Elimina conto */
+.form-container button[value="delete"] {
+  background-color: #95a5a6;
+}
+.form-container button[value="delete"]:hover {
+  background-color: #7f8c8d;
+}
+
+/* Responsive mobile */
+@media (max-width: 600px) {
+  .form-container {
+    padding: 20px;
+  }
+  .form-container button {
+    display: block;
+    width: 100%;
+    margin: 8px 0 0 0;
+  }
+}
+
+
