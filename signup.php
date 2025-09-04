@@ -56,7 +56,7 @@
   <button type="submit">Registrati</button>
   <div class="error"></div>
 </form>
-    <p>Hai già un account? <a href="index.html">Accedi qui</a></p>
+    <p>Hai già un account? <a href="index.php">Accedi qui</a></p>
   </div>
 </body>
 </html>
