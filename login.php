@@ -2,43 +2,29 @@
 session_start();
 require 'config.php';
 
-$errore = '';
+$username = $_POST['username'] ?? '';
+$password = $_POST['password'] ?? '';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $username = trim($_POST['username']);
-    $password = trim($_POST['password']);
+// Cerca utente
+$stmt = $pdo->prepare("SELECT * FROM cliente WHERE username=?");
+$stmt->execute([$username]);
+$user = $stmt->fetch();
 
-    $stmt = $pdo->prepare('SELECT * FROM Cliente WHERE username = ?');
-    $stmt->execute([$username]);
-    $user = $stmt->fetch();
-
-    $stmt = $pdo->prepare('SELECT * FROM dipendente WHERE username = ?');
-    $stmt->execute([$username]);
-    $user_dipendente = $stmt->fetch();
-
-    if ($user) {
-        if (password_verify($password, $user['password'])) {
-            $_SESSION['user_id'] = $user['id_cliente'];
-            header('Location: dashboard.php');
-        } else if ($user_dipendente && password_verify($password, $user_dipendente['password'])) {
-            $_SESSION['user_id'] = $user_dipendente['id_dipendente'];
-            header('Location: dashboard_admin.php');
-        } else {
-            $errore = "Username o password non corretti.";
-        }
-    }
+if ( $password == $user['password']) {
+    $_SESSION['username']  = $user['username'];
+    $_SESSION['id_utente'] = $user['id'];
+    $_SESSION['id_cliente']   = $user['id_cliente'];
+    header("Location: dashboard.php");
+    exit;
 }
+
+$_SESSION['errore']   = $user ? "Password non corretta." : "Username non valido.";
+$_SESSION['username'] = $username;
+header("Location: index.php");
+exit;
 ?>
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-        exit();
-    } else {
-        $errore = "Username o password non corretti.";
-    }
-}
-?>
+
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
